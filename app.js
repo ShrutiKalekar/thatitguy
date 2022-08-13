@@ -96,6 +96,11 @@ app.get("/aboutus",function(req,res){
   res.sendFile(__dirname+"/aboutus.html")
 })
 
+//INVESTORS
+app.get("/investors",function(req,res){
+  res.sendFile(__dirname+"/investors.html")
+})
+
 //listen method
 app.listen(4131, function() {
   console.log("Server started on port 4131");
