@@ -169,6 +169,6 @@ app.get("/finance",function(req,res){
 
 
 //listen method
-app.listen(4131, function() {
+app.listen(process.env.PORT || 4131 , function() {
   console.log("Server started on port 4131");
 });
