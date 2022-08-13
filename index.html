@@ -33,10 +33,44 @@
     <!-- fontawesome -->
 <script src="https://kit.fontawesome.com/2f3027cded.js" crossorigin="anonymous"></script>
 
+<script>
+
+
+function notifyMe() {
+  if (!("Notification" in window)) {
+    // Check if the browser supports notifications
+    alert("This browser does not support desktop notification");
+  } else if (Notification.permission === "granted") {
+    // Check whether notification permissions have already been granted;
+    // if so, create a notification
+    const notification = new Notification("New Message From Startup Community",{body :"Hola Amigo",
+      icon : "https://cdn-icons-png.flaticon.com/512/2645/2645883.png"});
+    // …
+  } else if (Notification.permission !== "denied") {
+    // We need to ask the user for permission
+    Notification.requestPermission().then((permission) => {
+      // If the user accepts, let's create a notification
+      if (permission === "granted") {
+        const notification = new Notification("New Message From Startup Community",{body :"Hola Amigo",
+          icon : "https://cdn-icons-png.flaticon.com/512/2645/2645883.png"});
+        //
+      }
+    });
+  }
+
+  notification.onclick = (e) => {
+    window.location.href = "https://www.google.com";
+  };
+
+  // At last, if the user has denied notifications, and you
+  // want to be respectful there is no need to bother them anymore.
+}
+
+</script>
+
 </head>
 
 <body>
-
   <section id="title">
     <div class="container-fluid">
 
@@ -50,15 +84,15 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="#title">HOME</a>
+                <a class="nav-link" href="#title" onclick="notifyMe()">HOME</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> SERVICES
                 </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">FINANCIAL ASSISTANCE</a>
-                      <a class="dropdown-item" href="#">BUISNESS PLANNING</a>
-                      <a class="dropdown-item" href="#">HR CONSULTANCY</a>
+                      <a class="dropdown-item" href="/finance">FINANCIAL ASSISTANCE</a>
+                      <a class="dropdown-item" href="/buiseness">BUISNESS PLANNING</a>
+                      <a class="dropdown-item" href="/hr">HR CONSULTANCY</a>
                   </div>
               </li>
             <li class="nav-item">
@@ -77,8 +111,8 @@
 
     <!-- Top-container -->
 
-    <div class="container">
-        <img class="BackgroundImage" src="assets/homepageid.jpg" alt="BackgroundImage">
+    <div class="bgi">
+        <img class="BackgroundImage" src="assets/homepageid.jpg" alt="BackgroundImage" >
     </div>
 
   </section>

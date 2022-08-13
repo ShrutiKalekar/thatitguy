@@ -152,6 +152,21 @@ app.get("/contact", function(req, res){
   res.render("contact", {contactContent: contactContent});
 });
 
+// hr-finance-buiseness
+
+app.get("/hr",function(req,res){
+  res.sendFile(__dirname+"/hr.html");
+});
+
+app.get("/buiseness",function(req,res){
+  res.sendFile(__dirname+"/buisness.html");
+});
+
+
+app.get("/finance",function(req,res){
+  res.sendFile(__dirname+"/finance.html");
+});
+
 
 //listen method
 app.listen(4131, function() {
