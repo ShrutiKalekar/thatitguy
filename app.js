@@ -94,8 +94,8 @@ app.get("/premium",function(req,res){
 
 //mainpageabout
 app.get("/about",function(req,res){
-  res.sendFile(__dirname+"/aboutus.html")
-})
+  res.sendFile(__dirname+"/aboutus.html");
+});
 
 
 //INVESTORS
