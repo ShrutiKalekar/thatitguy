@@ -35,7 +35,7 @@ app.post("/",function(req,res){
   const password = req.body.password;
 
   if (!password || !email) {
-    res.sendFile(__dirname+"/signup.html");
+    res.sendFile(__dirname+"/subscription.html");
     return;
  }
 
@@ -78,6 +78,7 @@ app.get("/subscription",function(req,res){
   res.sendFile(__dirname + "/subscription.html");
 })
 
+
 // failure
 app.get("/failure",function(req,res){
    res.sendFile(__dirname + "/failure.html")
@@ -94,8 +95,8 @@ app.get("/premium",function(req,res){
 
 //mainpageabout
 app.get("/about",function(req,res){
-  res.sendFile(__dirname+"/aboutus.html")
-})
+  res.sendFile(__dirname+"/about.html");
+});
 
 
 //INVESTORS
@@ -159,7 +160,7 @@ app.get("/hr",function(req,res){
 });
 
 app.get("/buiseness",function(req,res){
-  res.sendFile(__dirname+"/buisness.html");
+  res.sendFile(__dirname+"/buiseness.html");
 });
 
 
