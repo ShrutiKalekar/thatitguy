@@ -93,8 +93,8 @@ app.get("/premium",function(req,res){
 })
 
 //mainpageabout
-app.get("/aboutus",function(req,res){
-  res.sendFile(__dirname+"/aboutus.html");
+app.get("/about",function(req,res){
+  res.sendFile(__dirname+"/about.html");
 });
 
 
