@@ -78,6 +78,7 @@ app.get("/subscription",function(req,res){
   res.sendFile(__dirname + "/subscription.html");
 })
 
+
 // failure
 app.get("/failure",function(req,res){
    res.sendFile(__dirname + "/failure.html")
