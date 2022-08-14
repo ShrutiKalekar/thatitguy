@@ -115,6 +115,9 @@ app.get("/blog", function(req, res){
     });
 });
 
+app.get("/blog" ,function(req,res){
+  res.render("home");
+})
 
 app.get("/compose", function(req, res){
   res.render("compose");
