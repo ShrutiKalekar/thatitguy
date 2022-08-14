@@ -35,7 +35,7 @@ app.post("/",function(req,res){
   const password = req.body.password;
 
   if (!password || !email) {
-    res.sendFile(__dirname+"/signup.html");
+    res.sendFile(__dirname+"/subscription.html");
     return;
  }
 
