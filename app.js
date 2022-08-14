@@ -93,7 +93,7 @@ app.get("/premium",function(req,res){
 })
 
 //mainpageabout
-app.get("/about",function(req,res){
+app.get("/aboutus",function(req,res){
   res.sendFile(__dirname+"/aboutus.html");
 });
 
@@ -159,7 +159,7 @@ app.get("/hr",function(req,res){
 });
 
 app.get("/buiseness",function(req,res){
-  res.sendFile(__dirname+"/buisness.html");
+  res.sendFile(__dirname+"/buiseness.html");
 });
 
 
