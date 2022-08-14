@@ -16,6 +16,8 @@ const fetch = require("node-fetch");
 
 const app = express();
 app.set('view engine', 'ejs');
+//views
+app.set('views', path.join(__dirname, './Views'));
 
 //bodyParser use
 app.use(bodyParser.urlencoded({extended: true}));
@@ -115,6 +117,9 @@ app.get("/blog", function(req, res){
     });
 });
 
+app.get("/blog" ,function(req,res){
+  res.render("home");
+})
 
 app.get("/compose", function(req, res){
   res.render("compose");
