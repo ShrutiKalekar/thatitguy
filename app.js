@@ -118,7 +118,7 @@ app.get("/blog", function(req, res){
 });
 
 app.get("/blog" ,function(req,res){
-  res.render("home");
+  res.renderFile(__dirname+"/home");
 })
 
 app.get("/compose", function(req, res){
