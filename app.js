@@ -16,6 +16,8 @@ const fetch = require("node-fetch");
 
 const app = express();
 app.set('view engine', 'ejs');
+//views
+app.set('views', path.join(__dirname, './Views'));
 
 //bodyParser use
 app.use(bodyParser.urlencoded({extended: true}));
@@ -35,7 +37,7 @@ app.post("/",function(req,res){
   const password = req.body.password;
 
   if (!password || !email) {
-    res.sendFile(__dirname+"/signup.html");
+    res.sendFile(__dirname+"/subscription.html");
     return;
  }
 
@@ -78,6 +80,7 @@ app.get("/subscription",function(req,res){
   res.sendFile(__dirname + "/subscription.html");
 })
 
+
 // failure
 app.get("/failure",function(req,res){
    res.sendFile(__dirname + "/failure.html")
@@ -94,8 +97,8 @@ app.get("/premium",function(req,res){
 
 //mainpageabout
 app.get("/about",function(req,res){
-  res.sendFile(__dirname+"/aboutus.html")
-})
+  res.sendFile(__dirname+"/about.html");
+});
 
 
 //INVESTORS
@@ -114,6 +117,9 @@ app.get("/blog", function(req, res){
     });
 });
 
+app.get("/blog" ,function(req,res){
+  res.renderFile(__dirname+"/home");
+})
 
 app.get("/compose", function(req, res){
   res.render("compose");
@@ -159,7 +165,7 @@ app.get("/hr",function(req,res){
 });
 
 app.get("/buiseness",function(req,res){
-  res.sendFile(__dirname+"/buisness.html");
+  res.sendFile(__dirname+"/buiseness.html");
 });
 
 
